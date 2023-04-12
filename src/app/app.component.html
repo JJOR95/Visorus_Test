@@ -1,0 +1,39 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand px-4" href="/">
+    <img width="150" src="https://sistemas.visorus.com.mx/wp-content/uploads/2022/01/Logo_ParaFondoNEgro_MED-300x102.png">
+  </a>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-5" style="text-align: center;">
+      <div class="card mt-4 rounded-3 shadow-sm ">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal mx-3">Nuevo articulo</h4>
+        </div>
+        <div  class="form-grup mt-3 mb-4 mx-3">
+          <p>Clave:</p>
+          <input class="form-control" type="text" required [(ngModel)]="articuloN[0].clave" [(ngModel)]="categoriaN[0].clave" />
+          <p>Nombre:</p>
+          <input class="form-control" type="text" required [(ngModel)]="articuloN[0].nombre" [(ngModel)]="categoriaN[0].nombre" />
+          <button type="button" class="btn btn-primary mt-3" (click)="saveNew()">Añadir producto</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5" style="text-align: center;">
+      <div class="card mt-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Listado existente</h4>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mt-3 mb-4" style="text-align: center;">
+            <li *ngFor="let articulo of articuloArray"><h1 class="card-title pricing-card-title" style="text-align: center">Desde: {{ articulo.precios[0].precio }}<small class="text-body-secondary fw-light">/MXN</small></h1></li>
+            <li *ngFor="let articulo of articuloArray"><h2>{{articulo.clave}}-{{articulo.nombre}}</h2></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
